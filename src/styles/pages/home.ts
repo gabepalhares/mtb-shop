@@ -1,5 +1,4 @@
 import { styled } from "@stitches/react"
-import { transform } from "next/dist/build/swc";
 
 export const HomeContainer = styled('main', {
   display: 'flex',
@@ -9,7 +8,7 @@ export const HomeContainer = styled('main', {
   minHeight: 656,
 });
 
-export const Product = styled('a', {
+export const Product = styled('div', {
   background: '$offwhite',
   borderRadius: 8,
   cursor: 'pointer',
