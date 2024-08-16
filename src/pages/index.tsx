@@ -62,13 +62,13 @@ export const getStaticProps: GetStaticProps = async () => {
         style: "currency",
         currency: "BRL",
       }).format(price.unit_amount! / 100),
-    };
-  });
+    }
+  })
 
   return {
     props: {
       products,
     },
     revalidate: 60 * 60 * 2, // 2 hours
-  };
-};
+  }
+}
