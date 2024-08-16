@@ -17,8 +17,13 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {  
-  function handleBuyProduct() {
-    console.log(product.defaultPriceId)
+  async function handleBuyProduct() {
+    try {
+      
+    } catch (error) {
+      // Conect with observability tools, like Datadog for ex.
+      alert('Checkout redirect error!')
+    }
   }
   
   const { isFallback } = useRouter()
@@ -39,7 +44,7 @@ export default function Product({ product }: ProductProps) {
         <p>{product.description}</p>
 
         <button onClick={handleBuyProduct}>
-          Adicionar ao carrinho
+          Add to cart
           </button>
       </ProductDetails>
     </ProductContainer>
