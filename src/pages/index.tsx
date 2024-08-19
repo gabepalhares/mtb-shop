@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,6 +28,11 @@ export default function Home({ products }: HomeProps) {
   });
 
   return (
+    <>
+    <Head>
+      <title>Home | MTB Shop</title>
+    </Head>
+    
     <HomeContainer ref={sliderRef} className="keen-slider">
       {products.map((product) => {
         return (
@@ -43,6 +49,7 @@ export default function Home({ products }: HomeProps) {
         );
       })}
     </HomeContainer>
+    </>
   );
 }
 
