@@ -8,6 +8,16 @@ export const ProductContainer = styled('main', {
 
   maxWidth: 1180,
   margin: '0 auto',
+
+  '@md': {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+
+  '@container': {
+    padding: '1rem',
+  }
 })
 
 export const ImageContainer = styled('div', {
@@ -21,6 +31,10 @@ export const ImageContainer = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+
+  '@md': {
+    height: 400
+  },
 
   img: {
     objectFit: 'cover',
@@ -60,6 +74,11 @@ export const ProductDetails = styled('div', {
     cursor: 'pointer',
     fontWeight: 'bold',
     fontSize: '$md',
+    transition: 'background-color 0.2s ease-in-out',
+
+    '@md': {
+      marginTop: '1.5rem'
+    },
 
   '&:disabled': {
     opacity: 0.6,

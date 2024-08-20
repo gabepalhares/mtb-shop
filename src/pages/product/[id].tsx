@@ -1,13 +1,10 @@
-import axios from 'axios';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head';
 import Image from 'next/image';
 import Stripe from 'stripe';
 import { stripe } from "../../lib/stripe";
 import { ImageContainer, ProductContainer, ProductDetails } from '@/styles/pages/product';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-
+import { useCart } from '../../hooks/useCart'
 
 interface ProductProps {
   product: {
@@ -15,37 +12,20 @@ interface ProductProps {
     name: string;
     imageUrl: string;
     price: string;
+    priceNumber: number;
     description: string;
     defaultPriceId: string;
   }
 }
 
 export default function Product({ product }: ProductProps) {  
-  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
+  const { addCart, checkIfAlreadyInCart } = useCart()
+  const isProductAlreadyInCart = checkIfAlreadyInCart(product.id)
   
-  async function handleBuyProduct() {
-    try {
-      setIsCreatingCheckoutSession(true);
+  function handleBuyProduct() {
+    if (checkIfAlreadyInCart(product.id)) return
 
-      const response = await axios.post('/api/checkout', {
-        priceId: product.defaultPriceId,
-      })
-
-      const { checkoutUrl } = response.data;
-
-      window.location.href = checkoutUrl
-    } catch (error) {
-      // Conect with observability tools, like Datadog for ex.
-      
-      setIsCreatingCheckoutSession(false);
-      alert('Checkout redirect error!')
-    }
-  }
-  
-  const { isFallback } = useRouter()
-
-  if (isFallback) {
-    return <p>Loading...</p>
+    addCart(product)
   }
   
   return (
@@ -64,8 +44,11 @@ export default function Product({ product }: ProductProps) {
 
         <p>{product.description}</p>
 
-        <button disabled={isCreatingCheckoutSession} onClick={handleBuyProduct}>
-          Add to cart
+        <button disabled={isProductAlreadyInCart} onClick={handleBuyProduct}>
+            {isProductAlreadyInCart
+              ? 'Product in the cart'
+              : 'Add to cart'
+            }
           </button>
       </ProductDetails>
     </ProductContainer>

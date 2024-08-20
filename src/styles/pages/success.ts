@@ -1,5 +1,4 @@
-import { styled } from "@stitches/react";
-
+import { styled } from "@stitches/react"
 
 export const SuccessContainer = styled('main', {
   display: 'flex',
@@ -9,10 +8,18 @@ export const SuccessContainer = styled('main', {
   margin: '0 auto',
   height: 656,
 
+ '@container': {
+    padding: '0 1rem'
+  },
+
+  '@notebook': {
+    minHeight: 'calc(100vh - 120px)',
+  },
+  
   h1: {
     fontSize: '$2xl',
     color: '$gray100',
-    marginBottom: '4rem',
+    marginBottom: '1.5rem',
   },
 
   p: {
@@ -21,7 +28,9 @@ export const SuccessContainer = styled('main', {
     maxWidth: 560,
     textAlign: 'center',
     marginBottom: '5rem',
-    lineHeight: 1.4,
+    lineHeight: 1.6,
+    marginRight: '0.50rem',
+    marginLeft: '0.50rem',
   },
 
   a: {
@@ -37,20 +46,25 @@ export const SuccessContainer = styled('main', {
   },
 })
 
-export const ImageContainer = styled('div', {
-  width: '100%',
-  maxWidth: 130,
-  height: 145,
-  background: '$offwhite',
-  borderRadius: 8,
-  padding: '0.25rem',
-  marginBottom: '2rem',
-
+export const ImageSection = styled('div', {
   display: 'flex',
-  alignItems: 'center',
+  flexWrap: 'wrap',
   justifyContent: 'center',
-  
-  img: {
-    objectFit: 'cover',
-  }
+  marginBottom: '1.5rem',
+})
+
+export const ImageContainer = styled('div', {
+  position: 'relative',
+  zIndex: 1,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '0.25rem',
+  margin: '0 -26px',
+
+  width: 200,
+  height: 200,
+  background: '$offwhite',
+  borderRadius: '50%',
+  boxShadow: '0px 0px 60px rgba(0, 0, 0, 0.8)',
 })
