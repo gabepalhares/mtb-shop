@@ -19,8 +19,8 @@ export const ButtonContainer = styled('div', {
     padding: 12,
     borderRadius: 6,
     cursor: 'pointer',
-    width: '56px',
-    height: '56px',
+    width: '2.75rem',
+    height: '2.75rem',
     background: '$gray800',
     border: 'none',
 

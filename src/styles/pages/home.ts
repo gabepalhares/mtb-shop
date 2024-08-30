@@ -5,7 +5,7 @@ export const HomeContainer = styled('main', {
   width: '100%',
   maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
   marginLeft: 'auto',
-  minHeight: 656,
+  minHeight: 570,
 
   '@container': {
     paddingLeft: '1rem',
@@ -14,7 +14,7 @@ export const HomeContainer = styled('main', {
   '@notebook': {
     minHeight: 'calc(100vh - 120px)',
     paddingBottom: '1rem'
-  }
+  },
 });
 
 export const Product = styled('div', {
@@ -34,16 +34,17 @@ export const Product = styled('div', {
   },
 
   footer: {
+    height: '5.5rem',
     position: 'absolute',
-    bottom: '0.25rem',
-    left: '0.25rem',
-    right: '0.25rem',
+    bottom: '0.5rem',
+    left: '0.5rem',
+    right: '0.5rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '2rem',
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    borderRadius: 6,
+    borderRadius: 8,
 
     transform: 'translateY(110%)',
     opacity: 0,
@@ -69,8 +70,8 @@ export const Product = styled('div', {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '56px',
-    height: '56px',
+    width: '2.75rem',
+    height: '2.75rem',
     border: 'none',
     background: '$red300',
     borderRadius: '6px',

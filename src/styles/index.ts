@@ -35,6 +35,7 @@ export const {
   media: {
     sm: '(max-width: 500px)',
     md: '(max-width: 768px)',
+    xl: '(max-width: 1250px)',
     container: '(max-width: 1180px)',
     notebook: '(max-width: 1366px)',
   },

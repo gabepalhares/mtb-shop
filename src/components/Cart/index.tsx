@@ -20,7 +20,7 @@ export function Cart() {
       <Dialog.Trigger asChild>
         <ButtonContainer>
           <Handbag
-            size={24}
+            size={22}
             weight='bold'
           />
 
@@ -39,7 +39,7 @@ export function Cart() {
             Bike Cart
           </Dialog.Title>
           <ModalClose asChild>
-            <X size={24} weight='bold'/>
+            <X size={20} weight='bold'/>
           </ModalClose>
           <ModalDescription>
             {cartItems.length >= 1

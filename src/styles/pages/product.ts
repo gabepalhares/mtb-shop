@@ -9,21 +9,17 @@ export const ProductContainer = styled('main', {
   maxWidth: 1180,
   margin: '0 auto',
 
-  '@md': {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-
-  '@container': {
-    padding: '1rem',
-  }
+  '@xl': {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
 })
 
 export const ImageContainer = styled('div', {
   width: '100%',
-  maxWidth: 576,
-  height: 656,
+  maxWidth: 540,
+  height: 570,
   background: '$offwhite',
   borderRadius: 8,
   padding: '0.25rem',
@@ -46,26 +42,30 @@ export const ProductDetails = styled('div', {
   flexDirection: 'column',
 
   h1: {
-    fontSize: '$2xl',
+    fontSize: '$xl',
     color: '$gray300',
   },
 
   span: {
     marginTop: '1rem',
     display: 'block',
-    fontSize: '$2xl',
+    fontSize: '$xl',
     color: '$red300',
+    marginBottom: '2.5rem',
   },
 
   p: {
-    marginTop: '2.5rem',
     fontSize: '$md',
     lineHeight: 1.6,
     color: '$gray300',
+    marginBottom: 'auto',
+
+    '@md': {
+      marginBottom: '1.5rem'
+    },
   },
 
   button: {
-    marginTop: 'auto',
     backgroundColor: '$red500',
     border: 0,
     color: '$white',
@@ -75,10 +75,6 @@ export const ProductDetails = styled('div', {
     fontWeight: 'bold',
     fontSize: '$md',
     transition: 'background-color 0.2s ease-in-out',
-
-    '@md': {
-      marginTop: '1.5rem'
-    },
 
   '&:disabled': {
     opacity: 0.6,

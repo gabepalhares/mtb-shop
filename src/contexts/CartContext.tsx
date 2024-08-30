@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useState } from "react"
-import { addCartToast, removeCartToast } from "../components/Toast"
 export interface ProductProps {
     id: string
     name: string
@@ -33,7 +32,6 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
     function addCart(product: ProductProps) {
         setCartItems((state) => [...state, product])
-        addCartToast()
     }
 
     function checkIfAlreadyInCart(productId: string) {
@@ -43,7 +41,6 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     function removeCart(productId: string) {
         const filteredCart = cartItems.filter((item) => item.id !== productId)
         setCartItems(filteredCart)
-        removeCartToast()
     }
 
     return (

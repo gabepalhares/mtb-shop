@@ -54,8 +54,8 @@ export const ProductInfo = styled('div', {
 export const ProductsResume = styled('div', {
     display: 'flex',
     flexDirection: 'column',
-    gap: '18px',
-    marginTop: '40px',
+    gap: '1rem',
+    marginTop: '2.5rem',
 
     div: {
         display: 'flex',
@@ -76,9 +76,9 @@ export const ProductsResume = styled('div', {
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        height: '80px',
+        height: '3.75rem',
         padding: '20px 32px',
-        marginTop: '42px',
+        marginTop: '2.5rem',
         background: '$red300',
         border: 'none',
         color: '$white',
@@ -88,7 +88,7 @@ export const ProductsResume = styled('div', {
         cursor: 'pointer',
 
         '@md': {
-            height: '60px',
+            height: '3.125rem',
             marginTop: '1.5rem'
         },
 

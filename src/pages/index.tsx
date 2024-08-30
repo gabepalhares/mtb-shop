@@ -72,7 +72,7 @@ export default function Home({ products }: HomeProps) {
                     onClick={(event) => handleAddCart(event, product)}
                     disabled={checkIfAlreadyInCart(product.id)}
                   >
-                    <Handbag size={32} color='#FFFFFF' weight='bold' />
+                    <Handbag size={22} color='#FFFFFF' weight='bold' />
                   </button>
               </footer>
             </Product>
