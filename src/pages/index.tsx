@@ -52,7 +52,7 @@ export default function Home({ products }: HomeProps) {
   return (
     <>
     <Head>
-      <title>Home | MTB Shop</title>
+      <title>MTB Shop</title>
     </Head>
     
     <HomeContainer ref={sliderRef} className="keen-slider">
