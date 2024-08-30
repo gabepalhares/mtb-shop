@@ -19,6 +19,8 @@ export const HeaderContainer = styled('header', {
 })
 
 export const MTBShop = styled('header', {
+  marginLeft: '1.25rem',
+  marginRight: 'auto',
   fontFamily: 'Squada One',
   fontWeight: 'bold',
   fontSize: '4rem',

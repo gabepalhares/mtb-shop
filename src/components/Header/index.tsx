@@ -13,7 +13,7 @@ export function Header() {
       </Link>
       <MTBShop>
         <p>MTB SHOP</p>
-      </MTBShop>
+        </MTBShop>
       <Cart />
     </HeaderContainer>
   )
